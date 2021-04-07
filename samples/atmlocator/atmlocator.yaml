@@ -43,6 +43,7 @@ spec:
   name: atmlocator proxy
   protocol: https
   use_keyless: true
+  active: true
   proxy:
     target_url: http://atmlocator.default.svc:3000
     listen_path: /atmlocator

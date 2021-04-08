@@ -42,7 +42,7 @@ metadata:
 spec:
   name: atmlocator proxy
   protocol: https
-  use_keyless: true
+  use_standard_auth: true
   active: true
   proxy:
     target_url: http://atmlocator.default.svc:8000

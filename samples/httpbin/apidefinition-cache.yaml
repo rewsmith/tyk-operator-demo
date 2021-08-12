@@ -1,0 +1,46 @@
+apiVersion: tyk.tyk.io/v1alpha1
+kind: ApiDefinition
+metadata:
+  name: httpbin
+spec:
+  name: httpbin proxy
+  protocol: https
+  use_keyless: true
+  active: true
+  proxy:
+    target_url: http://httpbin.default.svc.cluster.local:8000
+    listen_path: /httpbin
+    strip_listen_path: true
+  version_data:
+    default_version: v1
+    not_versioned: false
+    versions:
+      v1:
+        name: v1
+        use_extended_paths: true
+        paths:
+          black_list: [ ]
+          ignored: [ ]
+          white_list: [ ]
+        extended_paths:
+          cache:
+            - /get
+            - /anything
+            - /delay
+      v2:
+        name: v2
+        use_extended_paths: true
+        paths:
+          black_list: [ ]
+          ignored: [ ]
+          white_list: [ ]
+        extended_paths:
+          cache:
+            - /get
+            - /anything
+            - /delay
+            - /status
+  cache_options:
+    cache_all_safe_requests: true
+    cache_timeout: 10
+    enable_cache: true

@@ -1,0 +1,17 @@
+apiVersion: tyk.tyk.io/v1alpha1
+kind: ApiDefinition
+metadata:
+  name: grpc-demo
+  namespace: tyk
+spec:
+  name: grpc-demo
+  api_id: grpc-demo
+  protocol: http
+  listen_port: 12345
+  active: true
+  use_keyless: true
+  proxy:
+    target_url: h2c://host.docker.internal:50051
+    listen_path: /
+    strip_listen_path: true
+

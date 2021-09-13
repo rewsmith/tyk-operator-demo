@@ -1,0 +1,21 @@
+apiVersion: tyk.tyk.io/v1alpha1
+kind: ApiDefinition
+metadata:
+  name: jwt-api
+spec:
+  name: jwt-api
+  api_id: jwt-api
+  enable_jwt: true
+  protocol: http
+  active: true
+  proxy:
+    target_url: http://httpbin.org
+    listen_path: /jwt-auth
+    strip_listen_path: true
+  strip_auth_data: true
+  jwt_signing_method: rsa
+  jwt_source: aHR0cHM6Ly9kZXYtODIxMjEyLm9rdGEuY29tL29hdXRoMi9kZWZhdWx0L3YxL2tleXM=
+  jwt_identity_base_field: sub
+  jwt_policy_field_name: pol
+  jwt_default_policies:
+    - default-jwt

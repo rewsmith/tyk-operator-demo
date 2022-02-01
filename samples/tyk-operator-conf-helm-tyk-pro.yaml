@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: tyk-operator-conf
+  namespace: tyk
+type: Opaque
+data:
+  TYK_AUTH: 600bd9d29ad947cf443573cf1f2d096a
+  TYK_ORG: 61f904ef1a9dd500016cfee3
+  TYK_MODE: cHJv
+  TYK_URL: aHR0cDovL2hvc3QuZG9ja2VyLmludGVybmFsOjMwMDA=
+  TYK_TLS_INSECURE_SKIP_VERIFY: dHJ1ZQ==

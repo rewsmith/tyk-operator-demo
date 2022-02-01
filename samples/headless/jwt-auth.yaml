@@ -2,6 +2,7 @@ apiVersion: tyk.tyk.io/v1alpha1
 kind: ApiDefinition
 metadata:
   name: jwt-api
+  namespace: tyk
 spec:
   name: jwt-api
   api_id: jwt-api

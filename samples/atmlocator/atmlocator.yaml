@@ -34,21 +34,3 @@ spec:
       targetPort: 8080
   selector:
     app: atmlocator
----
-apiVersion: tyk.tyk.io/v1alpha1
-kind: ApiDefinition
-metadata:
-  name: atmlocator
-spec:
-  name: atmlocator proxy
-  protocol: https
-  use_keyless: true
-  active: true
-  proxy:
-    target_url: http://atmlocator.default.svc:8000
-    listen_path: /atmlocator
-    strip_listen_path: true
-  cache_options:
-    cache_timeout: 10
-    enable_cache: true
-    cache_all_safe_requests: true

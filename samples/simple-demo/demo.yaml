@@ -5,8 +5,8 @@ metadata:
 spec:
   name: httpbin
   protocol: http
-  use_keyless: true
   active: true
+  use_keyless: true
   proxy:
     target_url: http://httpbin.org
     listen_path: /httpbin

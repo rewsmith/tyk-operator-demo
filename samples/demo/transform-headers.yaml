@@ -1,0 +1,30 @@
+apiVersion: tyk.tyk.io/v1alpha1
+kind: ApiDefinition
+metadata:
+  name: httpbin
+spec:
+  name: httpbin
+  protocol: http
+  active: true
+  use_keyless: true
+  proxy:
+    target_url: http://httpbin.org
+    listen_path: /httpbin
+    strip_listen_path: true
+  version_data:
+    default_version: Default
+    not_versioned: true
+    versions:
+      Default:
+        name: Default
+        use_extended_paths: true
+        extended_paths:
+          transform_headers:
+            - act_on: true
+              method: GET
+              path: /get
+              add_headers:
+                Content-Type: 'application/json'
+                X-Correlation-Id: '$tyk_context.request_id'
+                X-IP-Address: '$tyk_context.remote_addr'
+              delete_headers: []

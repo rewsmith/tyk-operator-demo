@@ -7,6 +7,7 @@ spec:
   protocol: http
   active: true
   use_keyless: true
+  enable_context_vars: true
   proxy:
     target_url: http://httpbin.org
     listen_path: /httpbin
@@ -27,4 +28,5 @@ spec:
                 Content-Type: 'application/json'
                 X-Correlation-Id: '$tyk_context.request_id'
                 X-IP-Address: '$tyk_context.remote_addr'
+                X-Path: '$tyk_context.path'
               delete_headers: []

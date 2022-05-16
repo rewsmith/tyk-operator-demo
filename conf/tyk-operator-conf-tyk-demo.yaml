@@ -5,7 +5,7 @@ metadata:
   namespace: tyk
 type: Opaque
 data:
-  TYK_AUTH: NjA3MDcyZjBlYjY3NDI2NjU4NmQxZDc5YmVjNTk3ZWU=
+  TYK_AUTH: NzlmZTQ3Y2M2MzhhNGM2Mzc1ZjQzN2I0Nzk0M2ZjYTQ=
   TYK_ORG: NWU5ZDk1NDRhMWRjZDYwMDAxZDBlZDIw
   TYK_MODE: cHJv
   TYK_URL: aHR0cDovL2hvc3QuZG9ja2VyLmludGVybmFsOjMwMDA=
